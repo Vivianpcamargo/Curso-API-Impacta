@@ -1,0 +1,7 @@
+- criação de tabelas no sqlalchemy/no sql no geral
+    - mostrar
+    - foreign key
+    - unique constraint
+    - fetchone, fetchmany, fetchall
+- sql injection
+    - falha de segurança importante

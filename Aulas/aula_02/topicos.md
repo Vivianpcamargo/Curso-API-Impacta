@@ -1,0 +1,14 @@
+# sql no python
+- sqlalchemy
+    - Biblioteca para conectar bancos de dados no python
+    - rodar no cmd: `pip install --user sqlalchemy`
+    - se não deu certo, veja instruções no texto da aula
+- sqlite
+    - Banco de dados muito simples, salvo em um arquivo
+- exemplo de bando de dados de uma biblioteca
+    - site para ver o banco de dados: `www.sqliteonline.com`
+- exemplo de sql no python
+    - select
+    - update
+    - create
+    - select com join
