@@ -65,12 +65,11 @@ Resposta: 110
 '''
 
 
-
-
 '''
 Vou te deixar dois exemplos de como acessar a URL. Nesse exemplo,
 eu estou retornando o dicionário inteiro.
 '''
+
 
 def busca_por_id(film_id):
     url = f"http://www.omdbapi.com/?apikey={api_key}&i={film_id}"
@@ -78,11 +77,14 @@ def busca_por_id(film_id):
     dicionario_do_pedido = pedido.json()
     return dicionario_do_pedido
 
+
 def busca_por_texto(texto_buscar):
     url = f"http://www.omdbapi.com/?apikey={api_key}&s={texto_buscar}"
-    pedido = requests.get(url) #conectar na URL
-    dicionario_do_pedido = pedido.json() #transformo a string que eu recebi num dicionário de python
+    pedido = requests.get(url)  # conectar na URL
+    # transformo a string que eu recebi num dicionário de python
+    dicionario_do_pedido = pedido.json()
     return dicionario_do_pedido
+
 
 '''
 Experimente! chame d1=busca_por_texto('star wars') e examine o
@@ -94,18 +96,24 @@ Agora, faça uma função busca_qtd_total que retorna quantos
 itens (pode ser filme, jogo, série ou o que for) batem com
 uma determinada busca.
 '''
+
+
 def busca_qtd_total(texto_buscar):
     dicionario_do_pedido = busca_por_texto(texto_buscar)
     return dicionario_do_pedido['totalResults']
+
 
 '''
 Faça uma função busca_qtd_filmes que retorna quantos
 filmes batem com uma determinada busca.
 '''
+
+
 def busca_qtd_filmes(texto_buscar):
     url = f"http://www.omdbapi.com/?apikey={api_key}&s={texto_buscar}&type=movie"
-    pedido = requests.get(url) #conectar na URL
-    dicionario_do_pedido = pedido.json() #transformo a string que eu recebi num dicionário de python
+    pedido = requests.get(url)  # conectar na URL
+    # transformo a string que eu recebi num dicionário de python
+    dicionario_do_pedido = pedido.json()
     return dicionario_do_pedido['totalResults']
 
 
@@ -113,11 +121,15 @@ def busca_qtd_filmes(texto_buscar):
 Faça uma função busca_qtd_jogos que retorna quantos
 jogos batem com uma determinada busca.
 '''
+
+
 def busca_qtd_jogos(texto_buscar):
     url = f"http://www.omdbapi.com/?apikey={api_key}&s={texto_buscar}&type=game"
-    pedido = requests.get(url) #conectar na URL
-    dicionario_do_pedido = pedido.json() #transformo a string que eu recebi num dicionário de python
+    pedido = requests.get(url)  # conectar na URL
+    # transformo a string que eu recebi num dicionário de python
+    dicionario_do_pedido = pedido.json()
     return dicionario_do_pedido['totalResults']
+
 
 '''
 Agora, vamos aprender a ver os detalhes de um filme.
@@ -138,21 +150,27 @@ o valor.
 Faça uma função nome_do_filme_por_id que recebe a id de
 um filme e retorna o seu nome.
 '''
+
+
 def nome_do_filme_por_id(id_filme):
     url = f"http://www.omdbapi.com/?i={id_filme}&apikey={api_key}"
     pedido = requests.get(url)
     dicionario = pedido.json()
     return dicionario['Title']
 
+
 '''
 Faça uma função ano_do_filme_por_id que recebe a id de
 um filme e retorna o seu ano de lançamento.
 '''
+
+
 def ano_do_filme_por_id(id_filme):
     url = f"http://www.omdbapi.com/?i={id_filme}&apikey={api_key}"
     pedido = requests.get(url)
     dicionario = pedido.json()
     return dicionario['Year']
+
 
 '''
 Peguemos vários dados de um filme de uma vez.
@@ -168,6 +186,8 @@ O dicionário deve ter as seguintes chaves:
 
 E os dados devem ser preenchidos baseado nos dados do site.
 '''
+
+
 def dicionario_do_filme_por_id(id_filme):
     dicionario_en = busca_por_id(id_filme)
     dicionario_pt = {}
@@ -176,6 +196,7 @@ def dicionario_do_filme_por_id(id_filme):
     dicionario_pt['diretor'] = dicionario_en['Director']
     dicionario_pt['genero'] = dicionario_en['Genre']
     return dicionario_pt
+
 
 '''
 Voltando para a busca...
@@ -188,6 +209,8 @@ A sua resposta deve ser uma lista, cada filme representado por
 um dicionário. cada dicionario deve conter os campos
 'nome' (valor Title da resposta) e 'ano' (valor Year da resposta).
 '''
+
+
 def busca_filmes(texto_buscar, pagina=1):
     url = f"http://www.omdbapi.com/?apikey={api_key}&s={texto_buscar}&page={pagina}"
     pedido = requests.get(url)
@@ -205,8 +228,10 @@ def busca_filmes(texto_buscar, pagina=1):
 Faça uma função busca_filmes_grande que, dada uma busca, retorna
 os VINTE primeiros filmes que batem com a busca.
 '''
+
+
 def busca_filmes_grande(texto_buscar):
-    pagina1 = busca_filmes(texto_buscar,1)
-    pagina2 = busca_filmes(texto_buscar,2)
+    pagina1 = busca_filmes(texto_buscar, 1)
+    pagina2 = busca_filmes(texto_buscar, 2)
 
     return pagina1+pagina2

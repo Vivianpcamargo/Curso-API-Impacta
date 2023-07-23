@@ -91,6 +91,8 @@ print("r9", "criacao" in dic['linguagens'][0])
 
 # 10. escreva uma função "mais velha" que recebe um dicionário como dic e retorna (isso é diferente de imprimir!) a linguagem de programação mais velha da nossa lista
 # Resposta:
+
+
 def mais_velha(dic):
     lista_linguagens = dic['linguagens']
     ling_velha = lista_linguagens[0]
@@ -99,10 +101,13 @@ def mais_velha(dic):
             ling_velha = linguagem
     return ling_velha
 
+
 print("r10", mais_velha(dic))
 
 # 11. escreva uma função que retorna uma lista (sem repetições) de paradigmas de linguagens de programação
 # Resposta:
+
+
 def lista_paradigmas(dic):
     lista_linguagens = dic['linguagens']
     paradigmas = []
@@ -112,5 +117,6 @@ def lista_paradigmas(dic):
             if p not in paradigmas:
                 paradigmas.append(p)
     return paradigmas
+
 
 print("r11", lista_paradigmas(dic))

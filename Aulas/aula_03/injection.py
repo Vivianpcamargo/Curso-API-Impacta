@@ -4,6 +4,7 @@ from sqlalchemy.sql import text
 # quero usar o banco de dados nesse arquivo, usando o formato sqlite
 engine = create_engine('sqlite:///autentica.db')
 
+
 def criar_tabelas():
     with engine.connect() as con:
         create_tabela_senhas = """
@@ -12,7 +13,8 @@ def criar_tabelas():
             senha TEXT NOT NULL
         )
         """
-        rs = con.execute(create_tabela_senhas)
+        con.execute(create_tabela_senhas)
+
 
 def criar_usuarios():
     with engine.connect() as con:
@@ -23,9 +25,11 @@ def criar_usuarios():
         add_admin = "INSERT INTO users (login, senha) VALUES ('admin','eLl96BFLVsoPrcOJGa0PhvwFnxt7ThKn')"
         con.execute(add_admin)
 
+
 def validar_admin(senha):
     with engine.connect() as con:
-        sql_admin = text (f"SELECT * FROM users WHERE login='admin' and senha='{senha}'")
+        sql_admin = text(
+            f"SELECT * FROM users WHERE login='admin' and senha='{senha}'")
         print(sql_admin)
         rs = con.execute(sql_admin)
         result = rs.fetchone()
@@ -36,11 +40,13 @@ def validar_admin(senha):
 # ataque malicioso
     # validar_admin("nao sei' OR 'a'='a")
 
+
 def validar_seguro(senha):
     with engine.connect() as con:
-        sql_admin = text ("SELECT * FROM users WHERE login='admin' and senha= :senha")
+        sql_admin = text(
+            "SELECT * FROM users WHERE login='admin' and senha= :senha")
         print(sql_admin)
-        rs = con.execute(sql_admin , senha=senha)
+        rs = con.execute(sql_admin, senha=senha)
         result = rs.fetchone()
         if result == None:
             return 'nao autorizado'

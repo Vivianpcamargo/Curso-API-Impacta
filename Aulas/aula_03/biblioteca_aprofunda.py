@@ -4,6 +4,7 @@ from sqlalchemy.sql import text
 # quero usar o banco de dados nesse arquivo, usando o formato sqlite
 engine = create_engine('sqlite:///biblioteca.db')
 
+
 def criar_tabelas():
     with engine.connect() as con:
         create_tabela_aluno = """
@@ -32,6 +33,7 @@ def criar_tabelas():
         """
         rs = con.execute(create_tabela_livro)
 
+
 def criar_alunos():
     with engine.connect() as con:
         add_aluno = "INSERT INTO Aluno (id,nome,email) VALUES (1,'Lucas Mendes', 'lucas.mendes@exemplo.com');"
@@ -40,6 +42,7 @@ def criar_alunos():
         rs = con.execute(add_aluno)
         add_aluno = "INSERT INTO Aluno (id,nome,email) VALUES (3,'Mirtes', 'teescrevoumemail@exemplo.com');"
         rs = con.execute(add_aluno)
+
 
 def criar_livros():
     with engine.connect() as con:
@@ -56,9 +59,10 @@ def criar_livros():
 # podemos executar a função criar tabelas várias vezes?
     # sim, porque o comando usado é create table SE ELA NAO EXISTIR
 
+
 def todos_alunos():
     with engine.connect() as con:
-        sql_consulta = text ("SELECT * FROM aluno")
+        sql_consulta = text("SELECT * FROM aluno")
         rs = con.execute(sql_consulta)
         resultados = []
         while True:
@@ -72,7 +76,7 @@ def todos_alunos():
 
 def todos_alunos_versao2():
     with engine.connect() as con:
-        sql_consulta = text ("SELECT * FROM aluno")
+        sql_consulta = text("SELECT * FROM aluno")
         rs = con.execute(sql_consulta)
         resultados_sujo = rs.fetchall()
         resultados_limpo = []
@@ -89,9 +93,10 @@ def todos_alunos_versao2():
   # fetchall pode ser ineficiente por carregar dados demais para a RAM,
   #            impedindo o servidor de processar outras demandas
 
+
 def todos_alunos_versao3():
     with engine.connect() as con:
-        sql_consulta = text ("SELECT * FROM aluno")
+        sql_consulta = text("SELECT * FROM aluno")
         rs = con.execute(sql_consulta)
         resultados_limpo = []
         while True:
