@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar fruta</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'favicon.png') }}" />
+</head>
+
+<body>
+  <h1>Cadastrar fruta</h1>
+  <form action="/frutas" method="POST">
+    <div>
+      <label for="campo_nome">Nome da fruta:</label>
+      <input type="text" id="campo_nome" name="nome" />
+    </div>
+    <div>
+      <label for="campo_cor">Cor da fruta:</label>
+      <input type="text" id="campo_cor" name="cor" />
+    </div>
+    <div><button type="submit">Salvar</button></div>
+  </form>
+</body>
+
+</html>

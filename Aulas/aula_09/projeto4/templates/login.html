@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+
+<body>
+  <div>{{err}}</div>
+  <form action="/login" method="POST">
+    <div>
+      <label for="campo_login">Login:</label>
+      <input type="text" id="campo_login" name="login" />
+    </div>
+    <div>
+      <label for="campo_senha">Senha:</label>
+      <input type="password" id="campo_senha" name="senha" />
+    </div>
+    <div><button type="submit">Entrar</button></div>
+  </form>
+</body>
+
+</html>

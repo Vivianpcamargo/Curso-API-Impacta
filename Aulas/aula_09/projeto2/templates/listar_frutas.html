@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lista de frutas</title>
+
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'favicon.png') }}" />
+</head>
+
+<body>
+  <h1>Lista de frutas</h1>
+  {% if listagem | length == 0 %}
+  <p>Desculpe, não há frutas cadastradas.</p>
+  {% else %}
+  <p>Nossas frutas são:</p>
+  <ul>
+    {% for f in listagem %}
+    <li>Temos {{f['nome']}} de cor {{f['cor']}}.</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+
+</html>
