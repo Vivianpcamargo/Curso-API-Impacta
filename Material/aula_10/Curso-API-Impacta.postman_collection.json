@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "a3f14acc-6c2f-4f42-95e1-3132f8840356",
+		"name": "Curso-API-Impacta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10550152"
+	},
+	"item": [
+		{
+			"name": "Listagem Alunos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"nome\": \"Vivian\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/alunos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"nome\": \"Vivian\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/alunos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 20:34:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "175"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Andreia\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Arthur\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Pedro\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Vivian\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Listagem por Id de Alunos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/alunos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/alunos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 20:36:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"nome\": \"Vivian\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Deletando Aluno",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/alunos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/alunos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 20:37:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "132"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Andreia\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Arthur\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Pedro\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Atualizando Aluno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"nome\": \"Bruna\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/alunos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"nome\": \"Bruna\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/alunos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 20:39:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "174"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nome\": \"Andreia\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Arthur\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Pedro\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Bruna\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Resetar Dados",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/reseta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"reseta"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/reseta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"reseta"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 20:40:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ALUNO\": [],\n    \"PROFESSOR\": []\n}"
+				}
+			]
+		}
+	]
+}
