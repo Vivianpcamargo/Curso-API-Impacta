@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "a3f14acc-6c2f-4f42-95e1-3132f8840356",
+		"name": "Curso-API-Impacta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10550152"
+	},
+	"item": [
+		{
+			"name": "Listagem Alunos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/alunos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/alunos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 01:41:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"media\": 8.5,\n        \"nome\": \"Andreia\"\n    },\n    {\n        \"id\": 2,\n        \"media\": 10,\n        \"nome\": \"Arthur\"\n    },\n    {\n        \"id\": 3,\n        \"media\": 10,\n        \"nome\": \"Pedro\"\n    },\n    {\n        \"id\": 4,\n        \"media\": 7,\n        \"nome\": \"Ana\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Listagem por Id de Alunos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/alunos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/alunos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 01:44:44 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Aluno\": {\n        \"id\": 1,\n        \"media\": 8.5,\n        \"nome\": \"Andreia\"\n    },\n    \"Status\": \"Aluno encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Listagem Maior Média Alunos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/alunos/maior_media",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos",
+						"maior_media"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/alunos/maior_media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos",
+								"maior_media"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 01:46:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "122"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"media\": 10,\n        \"nome\": \"Arthur\"\n    },\n    {\n        \"id\": 3,\n        \"media\": 10,\n        \"nome\": \"Pedro\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Inserindo Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"nome\": \"Vivian\",\r\n    \"media\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/alunos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"nome\": \"Vivian\",\r\n    \"media\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/alunos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 01:48:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "300"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"media\": 8.5,\n        \"nome\": \"Andreia\"\n    },\n    {\n        \"id\": 2,\n        \"media\": 10,\n        \"nome\": \"Arthur\"\n    },\n    {\n        \"id\": 3,\n        \"media\": 10,\n        \"nome\": \"Pedro\"\n    },\n    {\n        \"id\": 4,\n        \"media\": 7,\n        \"nome\": \"Ana\"\n    },\n    {\n        \"id\": 5,\n        \"media\": 10,\n        \"nome\": \"Vivian\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Atualizando Aluno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"nome\": \"Vivian\",\r\n    \"media\": 9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/alunos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"nome\": \"Vivian\",\r\n    \"media\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5002/alunos/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 01:49:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "299"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"media\": 8.5,\n        \"nome\": \"Andreia\"\n    },\n    {\n        \"id\": 2,\n        \"media\": 10,\n        \"nome\": \"Arthur\"\n    },\n    {\n        \"id\": 3,\n        \"media\": 10,\n        \"nome\": \"Pedro\"\n    },\n    {\n        \"id\": 4,\n        \"media\": 7,\n        \"nome\": \"Ana\"\n    },\n    {\n        \"id\": 5,\n        \"media\": 9,\n        \"nome\": \"Vivian\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Deletando Aluno",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/alunos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"alunos",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[200] OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5002/alunos/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5002",
+							"path": [
+								"alunos",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 01:50:34 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"media\": 8.5,\n        \"nome\": \"Andreia\"\n    },\n    {\n        \"id\": 2,\n        \"media\": 10,\n        \"nome\": \"Arthur\"\n    },\n    {\n        \"id\": 3,\n        \"media\": 10,\n        \"nome\": \"Pedro\"\n    },\n    {\n        \"id\": 4,\n        \"media\": 7,\n        \"nome\": \"Ana\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
